@@ -146,6 +146,7 @@ where
 ///
 /// It returns both, the standard and the strengthened constants.
 fn derive_constants(arity: usize) -> (DerivedConstants, DerivedConstants) {
+    // TODO (jake): add Halo2 strength
     let (full_standard, partial_standard) = round_numbers_base(arity);
     let (full_strengthened, partial_strengthened) = round_numbers_strengthened(arity);
     (

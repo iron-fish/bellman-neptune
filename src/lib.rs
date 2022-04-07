@@ -5,7 +5,7 @@ extern crate lazy_static;
 
 pub use crate::poseidon::{Arity, Poseidon};
 use crate::round_constants::generate_constants;
-use crate::round_numbers::{round_numbers_base, round_numbers_strengthened};
+use crate::round_numbers::{round_numbers_base, round_numbers_halo, round_numbers_strengthened};
 #[cfg(test)]
 use blstrs::Scalar as Fr;
 pub use error::Error;
@@ -46,6 +46,12 @@ pub mod error;
 mod matrix;
 mod mds;
 
+/// Poseidon Groth16 circuit
+pub mod circuit;
+
+/// Poseidon Halo2 circuit
+pub mod halo2_circuit;
+
 /// Poseidon hash
 pub mod poseidon;
 mod poseidon_alt;
@@ -79,6 +85,7 @@ pub(crate) const TEST_SEED: [u8; 16] = [
 pub enum Strength {
     Standard,
     Strengthened,
+    Halo,
 }
 
 impl fmt::Display for Strength {
@@ -86,6 +93,7 @@ impl fmt::Display for Strength {
         match self {
             Self::Standard => write!(f, "standard"),
             Self::Strengthened => write!(f, "strengthened"),
+            Self::Halo => write!(f, "halo"),
         }
     }
 }
@@ -126,6 +134,7 @@ pub fn round_numbers(arity: usize, strength: &Strength) -> (usize, usize) {
     match strength {
         Strength::Standard => round_numbers_base(arity),
         Strength::Strengthened => round_numbers_strengthened(arity),
+        Strength::Halo => round_numbers_halo(arity),
     }
 }
 
