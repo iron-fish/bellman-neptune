@@ -43,14 +43,9 @@ compile_error!("The `cuda` and `opencl` features need the `bls` and/or `pasta` f
 pub mod circuit;
 pub mod circuit2;
 pub mod error;
+pub mod halo2_circuit;
 mod matrix;
 mod mds;
-
-/// Poseidon Groth16 circuit
-pub mod circuit;
-
-/// Poseidon Halo2 circuit
-pub mod halo2_circuit;
 
 /// Poseidon hash
 pub mod poseidon;
@@ -85,6 +80,7 @@ pub(crate) const TEST_SEED: [u8; 16] = [
 pub enum Strength {
     Standard,
     Strengthened,
+    // TODO (jake): remove `Strength::Halo`.
     Halo,
 }
 

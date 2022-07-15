@@ -42,13 +42,11 @@ pub(crate) fn round_numbers_strengthened(arity: usize) -> (usize, usize) {
     (full_round, strengthened_partial_rounds)
 }
 
-// Halo2 circuits require an even number of full and partial rounds.
+// Halo2 circuits require an even number of partial rounds.
+// TODO (jake): remove Halo2 strength
 #[allow(dead_code)]
 pub(crate) fn round_numbers_halo(arity: usize) -> (usize, usize) {
-    let (mut full_rounds, mut partial_rounds) = round_numbers_base(arity);
-    if full_rounds & 1 == 1 {
-        full_rounds += 1;
-    }
+    let (full_rounds, mut partial_rounds) = round_numbers_base(arity);
     if partial_rounds & 1 == 1 {
         partial_rounds += 1;
     }
