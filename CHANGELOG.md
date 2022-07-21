@@ -8,17 +8,20 @@ and this project adheres to [Semantic Versioning](https://book.async.rs/overview
 ## Unreleased
 
 ## 6.2.0 - 2022-6-10
+
 - Reduce constraints (https://github.com/filecoin-project/neptune/pull/148)
 
 ## 6.1.1 - 2022-5-26
+
 - Implement Arity for U1 (https://github.com/filecoin-project/neptune/pull/145)
 
 ## 6.1.0 - 2022-4-22
+
 - Wasm support (https://github.com/filecoin-project/neptune/pull/139)
 
 ## 6.0.0 - 2022-3-22
 
-- Use bellperson v0.19.0. (https://github.com/filecoin-project/neptune/pull/141)
+- Use bellman v0.19.0. (https://github.com/filecoin-project/neptune/pull/141)
 - refactor: use field name as part of the function names (https://github.com/filecoin-project/neptune/pull/136)
 - chore: update to Rust 1.56.0 (https://github.com/filecoin-project/neptune/pull/138)
 - chore: use Rust 1.51.0 (https://github.com/filecoin-project/neptune/pull/134)
@@ -29,9 +32,10 @@ and this project adheres to [Semantic Versioning](https://book.async.rs/overview
 - Fixes gaussian elimination for matrices with 0 entries (https://github.com/filecoin-project/neptune/pull/122)
 
 ## 5.1.0 - 2021-10-21
+
 - Cleanup domain tags (https://github.com/filecoin-project/neptune/pull/121)
 - Fix, test, and enable custom domain tags. (https://github.com/filecoin-project/neptune/pull/116)
-- Update bellperson to v0.18.0 (https://github.com/filecoin-project/neptune/pull/115)
+- Update bellman to v0.18.0 (https://github.com/filecoin-project/neptune/pull/115)
 - Fix spec's sparse factorization w vector (https://github.com/filecoin-project/neptune/pull/114)
 
 ## 5.0.0 - 2021-9-30
@@ -45,6 +49,7 @@ and this project adheres to [Semantic Versioning](https://book.async.rs/overview
 - Pass GPU data from a pre-populated vector (https://github.com/filecoin-project/neptune/pull/106)
 
 ## 4.0.0 - 2021-8-2
+
 - Upgrade to latest rust-gpu-tools (https://github.com/filecoin-project/neptune/pull/91)
 - Rename GPU feature to Futhark (https://github.com/filecoin-project/neptune/pull/100)
 - Improve Clippy on CI (https://github.com/filecoin-project/neptune/pull/92)
@@ -53,12 +58,15 @@ and this project adheres to [Semantic Versioning](https://book.async.rs/overview
 - Remove GPUSelector (https://github.com/filecoin-project/neptune/pull/96)
 
 ## 3.0.0 - 2021-6-1
-- Breaking update of `bellperson` to `0.14` and associated dependency upgrades.
+
+- Breaking update of `bellman` to `0.14` and associated dependency upgrades.
 
 ## 2.7 - 2021-3-9
-- Use bellperson 0.13.
+
+- Use bellman 0.13.
 
 ## 2.6 - 2021-1-21
+
 - Pure OpenCL implementation of batch hashing. (https://github.com/filecoin-project/neptune/pull/78)
 
 ## 2.5 [release commited but never published to crates.io, due to authentication glitch]
@@ -72,7 +80,7 @@ and this project adheres to [Semantic Versioning](https://book.async.rs/overview
 
 ## 2.2.0 - 2020-11-01
 
-- Update `bellperson` to `0.12.0`
+- Update `bellman` to `0.12.0`
   [67](https://github.com/filecoin-project/neptune/pull/67)
 
 ## 2.1.1 - 2020-10-30
@@ -100,4 +108,3 @@ and this project adheres to [Semantic Versioning](https://book.async.rs/overview
 - Add support for domain separation tags. In addition to support for new hash functions built on the Poseidon permutation,
   this introduces a breaking change to the DST used for Strengthened Poseidon.
   [43](https://github.com/filecoin-project/neptune/pull/43).
-
